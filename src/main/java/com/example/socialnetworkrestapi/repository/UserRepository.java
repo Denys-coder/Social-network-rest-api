@@ -1,6 +1,6 @@
-package com.example.socialnewtworkrestapi.repository;
+package com.example.socialnetworkrestapi.repository;
 
-import com.example.socialnewtworkrestapi.entity.UserEntity;
+import com.example.socialnetworkrestapi.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

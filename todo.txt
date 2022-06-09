@@ -1,15 +1,4 @@
 // TODO
-• create user entity
-• create user repository
-• generate database schema using Spring Data JPA
-• put database scheme into liquibase changelog
-• commit and push
-
-// TODO
-• create /user/{userId}/profile endpoint
-• commit and push
-
-// TODO
 • create register, login, logout endpoints
 • secure application using JWT
 • commit and push

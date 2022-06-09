@@ -1,4 +1,4 @@
-package com.example.socialnewtworkrestapi.entity;
+package com.example.socialnetworkrestapi.entity;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -32,4 +32,8 @@ public class UserEntity
     @Getter
     @Setter
     private String aboutMe;
+    
+    @Getter
+    @Setter
+    private String password;
 }

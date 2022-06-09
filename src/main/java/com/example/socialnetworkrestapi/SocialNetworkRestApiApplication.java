@@ -1,15 +1,13 @@
-package com.example.socialnewtworkrestapi;
+package com.example.socialnetworkrestapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SocialNewtworkRestApiApplication
+public class SocialNetworkRestApiApplication
 {
-    
     public static void main(String[] args)
     {
-        SpringApplication.run(SocialNewtworkRestApiApplication.class, args);
+        SpringApplication.run(SocialNetworkRestApiApplication.class, args);
     }
-    
 }

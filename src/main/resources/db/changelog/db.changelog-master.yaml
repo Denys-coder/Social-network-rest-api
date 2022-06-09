@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
-      file: db/changelog/changeset/create-user-table.xml
+      file: db/changelog/changeset/create-users-table.xml
+  - include:
+      file: db/changelog/changeset/add-password-column-in-user-database.xml
