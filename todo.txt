@@ -1,9 +1,4 @@
 // TODO
-• create register, login, logout endpoints
-• secure application using JWT
-• commit and push
-
-// TODO
 • create post entity (header and text)
 • create repository
 • generate database schema using Spring Data JPA
@@ -11,8 +6,7 @@
 • commit and push
 
 // TODO
-• create /post/new, /post/delete/{postId}, /post/update/{postId} endpoints
-• create /user/{userId}/posts, /user/{userId}/post/{postId} endpoints
+• implement AuthController, PostController and UserController methods
 • commit and push
 
 // TODO add additional features
