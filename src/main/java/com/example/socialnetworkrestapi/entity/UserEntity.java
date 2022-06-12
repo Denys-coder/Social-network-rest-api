@@ -1,9 +1,11 @@
 package com.example.socialnetworkrestapi.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -49,4 +51,9 @@ public class UserEntity
         this.password = password;
         this.email = email;
     }
+    
+    @Getter
+    @Setter
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userId")
+    private List<PostEntity> posts;
 }

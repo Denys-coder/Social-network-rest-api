@@ -10,6 +10,7 @@
 • commit and push
 
 // TODO add additional features
+• make validation in database and in received json data
 • add friends feature
 • add feed feature
 • add post likes feature

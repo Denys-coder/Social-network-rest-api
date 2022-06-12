@@ -9,17 +9,16 @@
                    http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd
                    http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
-    <changeSet author="Denis" id="1">
-        <createTable tableName="users">
+    <changeSet author="Denis" id="4">
+        <createTable tableName="posts">
             <column autoIncrement="true" name="id" type="INTEGER">
-                <constraints nullable="false" primaryKey="true" primaryKeyName="users_pkey"/>
+                <constraints nullable="false" primaryKey="true" primaryKeyName="posts_pkey"/>
             </column>
-            <column name="about_me" type="VARCHAR(255)"/>
-            <column name="age" type="INTEGER">
+            <column name="header" type="VARCHAR(255)"/>
+            <column name="text" type="VARCHAR(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="name" type="VARCHAR(255)"/>
-            <column name="surname" type="VARCHAR(255)"/>
+            <column name="user_id" type="INTEGER"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>

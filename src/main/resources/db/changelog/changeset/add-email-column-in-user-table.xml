@@ -7,7 +7,7 @@
                    http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet author="Denis" id="1654439893390-2">
+    <changeSet author="Denis" id="3">
         <addColumn tableName="users">
             <column name="email"
                     type="varchar(255)"/>

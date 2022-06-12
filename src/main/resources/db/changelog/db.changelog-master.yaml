@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/changeset/add-password-column-in-user-table.xml
   - include:
       file: db/changelog/changeset/add-email-column-in-user-table.xml
+  - include:
+      file: db/changelog/changeset/create-posts-table.xml
