@@ -1,3 +1,4 @@
+<pre>
 Very simple REST API for social network
 
 
@@ -75,3 +76,4 @@ If you try to update another user's post you will get 403 Unauthenticated.
   "header":"header1",
   "text":"text1"
 }
+</pre>
