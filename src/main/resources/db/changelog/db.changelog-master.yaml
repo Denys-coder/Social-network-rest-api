@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/changeset/add-email-column-in-user-table.xml
   - include:
       file: db/changelog/changeset/create-posts-table.xml
+  - include:
+      file: db/changelog/changeset/make-post-id-as-long-and-add-foreign-key-on-user_id.xml

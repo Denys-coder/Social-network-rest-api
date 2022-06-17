@@ -1,9 +1,9 @@
 package com.example.socialnetworkrestapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import javax.persistence.*;
 
 @Entity
@@ -15,7 +15,7 @@ public class PostEntity
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private int id;
+    private long id;
     
     @Getter
     @Setter
@@ -28,5 +28,19 @@ public class PostEntity
     @Getter
     @Setter
     @JoinColumn
-    private int userId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private UserEntity user;
+    
+    public PostEntity(String header, String text, UserEntity user)
+    {
+        this.header = header;
+        this.text = text;
+        this.user = user;
+    }
+    
+    @PreRemove
+    private void removePostFromUser()
+    {
+        user.getPosts().remove(this);
+    }
 }

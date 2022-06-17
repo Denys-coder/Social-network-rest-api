@@ -13,7 +13,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-
 import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter
@@ -47,7 +46,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter
         chain.doFilter(request, response);
     }
     
-    private Authentication getUsernamePasswordAuthentication(HttpServletRequest request)
+    public Authentication getUsernamePasswordAuthentication(HttpServletRequest request)
     {
         String token = request.getHeader(JwtProperties.HEADER)
                 .replace(JwtProperties.TOKEN_PREFIX, "");

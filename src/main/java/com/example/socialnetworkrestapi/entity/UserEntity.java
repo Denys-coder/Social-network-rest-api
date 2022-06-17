@@ -1,10 +1,10 @@
 package com.example.socialnetworkrestapi.entity;
 
-import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -54,6 +54,6 @@ public class UserEntity
     
     @Getter
     @Setter
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "userId")
-    private List<PostEntity> posts;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user", orphanRemoval = true)
+    private List<PostEntity> posts = new ArrayList<>();
 }

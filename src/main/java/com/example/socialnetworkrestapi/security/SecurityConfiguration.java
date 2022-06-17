@@ -3,6 +3,7 @@ package com.example.socialnetworkrestapi.security;
 import com.example.socialnetworkrestapi.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -42,16 +43,23 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
                 .and()
                 // add jwt filters (1. authentication, 2. authorization)
                 .addFilter(new JwtAuthenticationFilter(authenticationManager()))
-                .addFilter(new JwtAuthorizationFilter(authenticationManager(), this.userRepository))
+                .addFilter(getJwtAuthorizationFilter())
                 .authorizeRequests()
                 // configure access rules
                 .antMatchers("/login").permitAll()
                 .antMatchers( "/register").permitAll()
-                .antMatchers("/user/*").permitAll()
-                .antMatchers("/post/*").hasRole("USER")
-                
-                
+                .antMatchers("/user/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/post/{postId}").permitAll()
+                .antMatchers(HttpMethod.POST, "/post").hasRole("USER")
+                .antMatchers(HttpMethod.DELETE, "/post/{postId}").hasRole("USER")
+                .antMatchers(HttpMethod.PUT, "/post/{postId}").hasRole("USER")
                 .anyRequest().authenticated();
+    }
+    
+    @Bean
+    JwtAuthorizationFilter getJwtAuthorizationFilter() throws Exception
+    {
+        return new JwtAuthorizationFilter(authenticationManager(), this.userRepository);
     }
     
     @Bean
