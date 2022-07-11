@@ -14,13 +14,13 @@ You can register new user
 }
 
 
-/login POS
+/login POST
 You can login
 {
   "username":"email1",
   "password":pass1"
 }
-In response you get JWT token in Authentication HTTP header with "Bearer " prefix
+In response you will get JWT token in Authentication HTTP header with "Bearer " prefix
 
 
 /user/{userId} GET
