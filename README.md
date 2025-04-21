@@ -77,3 +77,17 @@ If you try to update another user's post you will get 403 Unauthenticated.
   "text":"text1"
 }
 </pre>
+
+Used technologies:
+* Java
+* Spring Boot
+* - Core
+* - MVC
+* - Data JPA
+* - Security (JWT tokens)
+* SQL (Postgres)
+* git
+* Maven
+* Docker, Docker-compose
+* Liquibase
+* Lombok
